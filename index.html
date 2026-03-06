@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Катя, с 8 Марта!</title>
+  <meta name="description" content="Нежное поздравление для Кати на 8 Марта" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Manrope:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="glow"></div>
+  <canvas id="petals"></canvas>
+
+  <div class="wrap">
+    <main class="card">
+      <div class="grid">
+        <section class="left">
+          <div class="badge"><span class="dot"></span> 8 Марта • нежно и только для тебя</div>
+
+          <h1>Катя, <span class="name">с 8 Марта</span> ✨</h1>
+
+          <p class="sub">
+            Пусть эта весна будет мягкой — без спешки, с теплом внутри и моментами, когда хочется улыбаться просто так.
+            Ты удивительно красивая — и не только внешне: в тебе есть спокойная сила, свет и доброта.
+          </p>
+
+          <div class="actions">
+            <button class="btn-primary" id="btnSurprise">Открыть записку 💌</button>
+            <button class="btn-ghost" id="btnCopy">Скопировать ссылку 🔗</button>
+            <button class="btn-quest" id="btnQuest">Начать квест 🎁</button>
+          </div>
+
+          <div class="mini">
+            <div class="chip">
+              <div class="icon">🌷</div>
+              <div>
+                <b>Пусть будет</b>
+                <div class="muted">больше заботы о себе и тихого счастья.</div>
+              </div>
+            </div>
+            <div class="chip">
+              <div class="icon">☁️</div>
+              <div>
+                <b>И меньше</b>
+                <div class="muted">лишних тревог и усталости.</div>
+              </div>
+            </div>
+            <div class="chip">
+              <div class="icon">❤️‍🔥</div>
+              <div>
+                <b>А также</b>
+                <div class="muted">любви и страсти в наших сердцах.</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <aside class="right">
+          <div>
+            <div class="photo">
+              <img src="photo.jpg" alt="Катя" />
+            </div>
+
+            <div class="quote">
+              <strong>Маленькое на будущее:</strong><br>
+              пусть впереди будет больше дней, в которых ты чувствуешь себя любимой,
+              защищённой и вдохновлённой — и рядом будут люди, которые это берегут.
+            </div>
+          </div>
+
+          <footer>
+            <div>С любовью, <b>Юра</b> <span class="heart">♥</span></div>
+            <div id="today"></div>
+          </footer>
+        </aside>
+      </div>
+    </main>
+  </div>
+
+  <!-- Записка -->
+  <div class="modal" id="modalNote">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="noteTitle">
+      <div class="modal-head">
+        <div class="modal-title" id="noteTitle">Катя 💖</div>
+        <button class="close" data-close="modalNote">✕</button>
+      </div>
+      <div class="modal-body">
+        Я хочу, чтобы этот год принёс тебе спокойствие, уверенность и много нежных моментов.
+        Чтобы тебе чаще говорили “ты молодец”, и ты сама в это верила.
+        И чтобы у тебя всегда были силы выбирать то, что делает тебя счастливой.
+      </div>
+      <div class="sig">
+        <div>🌸 8 Марта</div>
+        <div id="date2"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Квест -->
+  <div class="modal" id="modalQuest">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="questTitle">
+      <div class="modal-head">
+        <div class="modal-title" id="questTitle">Квест для Кати 🎁</div>
+        <button class="close" data-close="modalQuest">✕</button>
+      </div>
+
+      <div class="quest">
+        <div class="quest-progress">
+          <span id="questStepLabel">Шаг 1</span>
+          <span class="quest-dots" id="questDots" aria-hidden="true"></span>
+        </div>
+
+        <div class="quest-hint" id="questHint"></div>
+
+        <div class="quest-inputRow">
+          <input id="questInput" class="quest-input" placeholder="Впиши код-слово с подарка" autocomplete="off" />
+          <button id="questSubmit" class="btn-primary quest-btn">Ок</button>
+        </div>
+
+        <div class="quest-msg" id="questMsg" role="status" aria-live="polite"></div>
+
+        <div class="quest-actions">
+          <button id="questReset" class="btn-ghost">Начать заново</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast">Скопировано!</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
